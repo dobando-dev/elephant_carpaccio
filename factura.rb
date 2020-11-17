@@ -21,7 +21,7 @@ class Factura
         end
 
         if(input_completo && validar_cantidad() && validar_precio_unitario() && validar_estado())
-
+            monto_total = calcular_monto_total()
         end
 
     end
@@ -50,6 +50,12 @@ class Factura
         end
         puts "Por favor ingrese un estado válido.\n"
         return false
+    end
+
+    def calcular_monto_total()
+        monto = @cantidad * @precio_unitario
+        puts "El monto total es #{monto}"
+        return monto
     end
 end
 
