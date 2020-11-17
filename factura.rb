@@ -3,7 +3,7 @@ class Factura
         puts "Bienvenid@ al sistema de facturacion\n"
         @cantidad = 0;
         @precio_unitario = 0.0
-        @estados = ["CA", "UT", "NV", "TX", "AL", "CA"]
+        @estados = {"CA"=>8.25, "UT"=>0, "NV"=>0, "TX"=>0, "AL"=>0}
     end
 
     def validar_input()
@@ -20,10 +20,7 @@ class Factura
             puts "Por favor ingrese el estado.\n"
         end
 
-        if(input_completo && validar_cantidad() && validar_precio_unitario() && validar_estado())
-            monto_total = calcular_monto_total()
-        end
-
+        return input_completo && validar_cantidad() && validar_precio_unitario() && validar_estado()
     end
 
     def validar_cantidad()
@@ -54,10 +51,23 @@ class Factura
 
     def calcular_monto_total()
         monto = @cantidad * @precio_unitario
-        puts "El monto total es #{monto}"
+        puts "El monto total es #{monto}\n"
         return monto
+    end
+
+    def calcular_impuesto(monto_total)
+        estado = ARGV[2]
+        impuesto = monto_total*(@estados[estado]/100)
+        puts "El impuesto para el estado #{estado} es #{impuesto}\n"
+    end
+
+    def facturar()
+        monto_total = calcular_monto_total()
+        impuesto = calcular_impuesto(monto_total)
     end
 end
 
 factura = Factura.new()
-factura.validar_input()
+if(factura.validar_input())
+    factura.facturar()
+end
