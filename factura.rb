@@ -3,6 +3,7 @@ class Factura
         puts "Bienvenid@ al sistema de facturacion\n"
         @cantidad = 0;
         @precio_unitario = 0.0
+        @estados = ["CA", "UT", "NV", "TX", "AL", "CA"]
     end
 
     def validar_input()
@@ -19,7 +20,7 @@ class Factura
             puts "Por favor ingrese el estado.\n"
         end
 
-        if(input_completo && validar_cantidad() && validar_precio_unitario())
+        if(input_completo && validar_cantidad() && validar_precio_unitario() && validar_estado())
 
         end
 
@@ -36,11 +37,18 @@ class Factura
 
     def validar_precio_unitario()
         @precio_unitario = ARGV[1].to_f
-        puts @precio_unitario
         if(@precio_unitario>0)
             return true
         end
         puts "Por favor ingrese un precio unitario válido.\n"
+        return false
+    end
+
+    def validar_estado()
+        if(@estados.include?(ARGV[2]))
+            return true
+        end
+        puts "Por favor ingrese un estado válido.\n"
         return false
     end
 end
