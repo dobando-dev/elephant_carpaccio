@@ -6,7 +6,9 @@ class Factura
     def validar_input()
         case ARGV.length
         when 0
-            puts "Por favor ingrese una cantidad."
+            puts "Por favor ingrese una cantidad.\n"
+        when 1
+            puts "Por favor ingrese el precio unitario.\n"
         end
     end
 end
