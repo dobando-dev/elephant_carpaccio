@@ -9,6 +9,8 @@ class Factura
             puts "Por favor ingrese una cantidad.\n"
         when 1
             puts "Por favor ingrese el precio unitario.\n"
+        when 2
+            puts "Por favor ingrese el estado.\n"
         end
     end
 end
