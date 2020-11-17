@@ -59,11 +59,14 @@ class Factura
         estado = ARGV[2]
         impuesto = monto_total*(@estados[estado]/100)
         puts "El impuesto para el estado #{estado} es #{impuesto}\n"
+        return impuesto
     end
 
     def facturar()
         monto_total = calcular_monto_total()
         impuesto = calcular_impuesto(monto_total)
+        total = monto_total + impuesto
+        puts "El monto total es #{total}"
     end
 end
 
