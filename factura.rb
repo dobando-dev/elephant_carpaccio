@@ -62,10 +62,25 @@ class Factura
         return impuesto
     end
 
+    def calcular_descuento(monto_total)
+        descuento = 0.0
+        porcentaje = 0
+        case monto_total
+        when 1000...5000 then porcentaje = 3
+        end
+
+        if(porcentaje!=0)
+            descuento = monto_total * (porcentaje/100.0)
+            puts "Se aplica un descuento de #{porcentaje}% por un monto de #{descuento}"
+        end
+        return descuento
+    end
+
     def facturar()
         monto_total = calcular_monto_total()
         impuesto = calcular_impuesto(monto_total)
-        total = monto_total + impuesto
+        descuento = calcular_descuento(monto_total)
+        total = monto_total + impuesto - descuento
         puts "El monto total es #{total}"
     end
 end
