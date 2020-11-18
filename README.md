@@ -24,7 +24,7 @@ US-10 - Como el usuario quiero aplicar un descuento del 3% si el monto total es 
 
 US-11 - Como el usuario quiero aplicar un descuento del 5% si el monto total es mayor o igual a $5000 y menor que $7000
 
-US-12 - Como el usuario quiero aplicar un descuento del 7% si el monto total es mayor o igual a $7000 y menor que $1000
+US-12 - Como el usuario quiero aplicar un descuento del 7% si el monto total es mayor o igual a $7000 y menor que $10000
 
 US-13 - Como el usuario quiero aplicar un descuento del 10% si el monto total es mayor o igual a $10000 y menor que $50000
 
