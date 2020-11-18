@@ -67,6 +67,7 @@ class Factura
         porcentaje = 0
         case monto_total
         when 1000...5000 then porcentaje = 3
+        when 5000...7000 then porcentaje = 5
         end
 
         if(porcentaje!=0)
