@@ -69,6 +69,7 @@ class Factura
         when 1000...5000 then porcentaje = 3
         when 5000...7000 then porcentaje = 5
         when 7000...10000 then porcentaje = 7
+        when 10000...50000 then porcentaje = 10
         end
 
         if(porcentaje!=0)
