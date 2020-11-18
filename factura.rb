@@ -3,7 +3,7 @@ class Factura
         puts "Bienvenid@ al sistema de facturacion\n"
         @cantidad = 0;
         @precio_unitario = 0.0
-        @estados = {"CA"=>8.25, "UT"=>6.85, "NV"=>8.0, "TX"=>6.25, "AL"=>0}
+        @estados = {"CA"=>8.25, "UT"=>6.85, "NV"=>8.0, "TX"=>6.25, "AL"=>4.0}
     end
 
     def validar_input()
